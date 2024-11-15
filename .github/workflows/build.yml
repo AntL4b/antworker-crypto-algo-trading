@@ -18,8 +18,3 @@ jobs:
           npm ci
           npm run test
           npm run build
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
