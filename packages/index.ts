@@ -3,6 +3,7 @@
  */
 export { Antworker, antworker } from "./antworker/antworker";
 export { Strategy } from "./strategy/strategy";
+export { Utils } from "./utils/utils";
 
 /**
  * ERROR
