@@ -1,43 +1,43 @@
 {
-    "name": "@antl4b/antworker-sample-strategy-runner",
-    "version": "1.0.0",
-    "description": "Algorithmic crypto trading strategy runner sample using Antworker in TypeScript",
-    "author": "AntL4b <ant1.antlab@gmail.com>",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/AntL4b/antworker-crypto-algo-trading.git"
-    },
-    "keywords": [
-        "Antworker",
-        "Crypto",
-        "Algoritmic",
-        "Trading",
-        "Strategy"
-    ],
-    "files": [
-        "dist"
-    ],
-    "main": "./dist/index.js",
-    "exports": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "engines": {
-        "node": ">=16"
-    },
-    "scripts": {
-        "build": "npm run clean && tsc",
-        "clean": "rimraf dist/"
-    },
-    "dependencies": {
-        "@antl4b/antworker-crypto-algo-trading": "file:../.."
-    },
-    "devDependencies": {
-        "@types/node": "^22.9.0",
-        "rimraf": "^6.0.1",
-        "typescript": "5.6.3"
-    },
-    "bugs": {
-        "url": "https://github.com/AntL4b/antworker-crypto-algo-trading/issues"
-    },
-    "homepage": "https://github.com/AntL4b/antworker-crypto-algo-trading#readme"
+  "name": "@antl4b/antworker-sample-strategy-runner",
+  "version": "1.0.0",
+  "description": "Algorithmic crypto trading strategy runner sample using Antworker in TypeScript",
+  "author": "AntL4b <ant1.antlab@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntL4b/antworker-crypto-algo-trading.git"
+  },
+  "keywords": [
+    "Antworker",
+    "Crypto",
+    "Algoritmic",
+    "Trading",
+    "Strategy"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist/"
+  },
+  "dependencies": {
+    "@antl4b/antworker-crypto-algo-trading": "file:../.."
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "5.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/AntL4b/antworker-crypto-algo-trading/issues"
+  },
+  "homepage": "https://github.com/AntL4b/antworker-crypto-algo-trading#readme"
 }

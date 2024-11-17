@@ -129,27 +129,47 @@ export class Logger {
 
   private buildContext(): LoggerContext {
     return {
-      logLevel: this.logLevel
+      logLevel: this.logLevel,
     };
   }
 }
 
+/**
+ * Log paylog with trace level
+ * @param payload payload to be logged
+ */
 export function logTrace(...payload: Array<any>): void {
   return Logger.getInstance().trace(...payload);
 }
 
+/**
+ * Log paylog with debug level
+ * @param payload payload to be logged
+ */
 export function logDebug(...payload: Array<any>): void {
   return Logger.getInstance().debug(...payload);
 }
 
+/**
+ * Log paylog with info level
+ * @param payload payload to be logged
+ */
 export function logInfo(...payload: Array<any>): void {
   return Logger.getInstance().info(...payload);
 }
 
+/**
+ * Log paylog with warn level
+ * @param payload payload to be logged
+ */
 export function logWarn(...payload: Array<any>): void {
   return Logger.getInstance().info(...payload);
 }
 
+/**
+ * Log paylog with error level
+ * @param payload payload to be logged
+ */
 export function logError(...payload: Array<any>): void {
   return Logger.getInstance().error(...payload);
 }

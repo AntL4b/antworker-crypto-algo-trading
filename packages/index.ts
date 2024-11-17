@@ -8,7 +8,7 @@ export { Utils } from "./utils/utils";
 /**
  * ERROR
  */
-export { AntworkerError } from "./models/AntworkerError";
+export { AntworkerError } from "./models/antworker-error";
 
 /**
  * OTHER

@@ -1,4 +1,4 @@
-import { AntworkerError } from "../models/AntworkerError";
+import { AntworkerError } from "../models/antworker-error";
 import { Strategy } from "../strategy/strategy";
 
 export class Antworker {
