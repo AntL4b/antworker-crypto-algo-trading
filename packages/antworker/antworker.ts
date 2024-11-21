@@ -1,4 +1,4 @@
-import { AntworkerError } from "../models/antworker-error";
+import { AntworkerError } from "../errors/antworker-error";
 import { Strategy } from "../strategy/strategy";
 
 export class Antworker {
@@ -21,10 +21,17 @@ export class Antworker {
     return Antworker.instance;
   }
 
+  /**
+   * Set the strategy to run
+   * @param strategy The strategy to run
+   */
   setStrategy(strategy: Strategy): void {
     this.strategy = strategy;
   }
 
+  /**
+   * Launch the strategy set to run
+   */
   runStrategy(): void {
     if (this.strategy != null) {
       this.strategy._run();

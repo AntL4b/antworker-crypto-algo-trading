@@ -1,5 +1,5 @@
 import { logError } from "../logger/logger";
-import { AntworkerError } from "../models/antworker-error";
+import { AntworkerError } from "../errors/antworker-error";
 
 export abstract class Strategy {
   constructor() {}

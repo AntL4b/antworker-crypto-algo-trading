@@ -1,7 +1,7 @@
 import { LogLevelEnum } from "../models/enums/log-level-enum";
-import { LoggerContext } from "../models/logger/logger-context";
-import { LoggerFormatter } from "../models/logger/logger-formatter";
-import { LoggerHandler } from "../models/logger/logger-handler";
+import { LoggerContext } from "../models/objects/logger/logger-context";
+import { LoggerFormatter } from "../models/objects/logger/logger-formatter";
+import { LoggerHandler } from "../models/objects/logger/logger-handler";
 
 export class Logger {
   private static instance: Logger;

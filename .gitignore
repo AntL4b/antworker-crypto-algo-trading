@@ -1,3 +1,11 @@
+# project specific
+**/private/*
+logs/*
+
+# Don't ignore these files
+!**/private/*template.ts
+!logs/log.txt
+
 dist/
 .build/
 .serverless/
