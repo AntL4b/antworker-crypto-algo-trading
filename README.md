@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/AntL4b/antworker-crypto-algo-trading/blob/main/docs/images/logo.png?raw=true" width="120" alt="Anthill Framework logo" />
+  <img src="https://github.com/AntL4b/antworker-crypto-algo-trading/blob/main/docs/images/logo.png?raw=true" width="120" alt="Antworker crypto algo trading logo" />
 </p>
 
 <p align="center">

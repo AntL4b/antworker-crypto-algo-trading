@@ -1,14 +1,14 @@
-import { antworker, KrakenFutureRestApi, Logger, logInfo, LogLevelEnum, Strategy, TimeFrameEnum, Utils } from "@antl4b/antworker-crypto-algo-trading";
-import { krakenFutureApiCredentials } from "./private/kraken-future-api-credentials"; // This file has to be created from your own
+import { antworker, BinanceRestApi, Logger, logInfo, LogLevelEnum, Strategy, TimeFrameEnum, Utils } from "@antl4b/antworker-crypto-algo-trading";
+import { binanceApiCredentials } from "./private/binance-api-credentials"; // This file has to be created from your own
 
 class MyStrat extends Strategy {
 
-  private krakenApi: KrakenFutureRestApi;
+  private binanceApi: BinanceRestApi;
 
   constructor() {
     super();
-    this.krakenApi = KrakenFutureRestApi.getInstance();
-    this.krakenApi.setKrakenFutureApiCredentials(krakenFutureApiCredentials);
+    this.binanceApi = BinanceRestApi.getInstance();
+    this.binanceApi.setCredentials(binanceApiCredentials);
   }
 
   override async beforeLoop(): Promise<void> {
@@ -16,7 +16,10 @@ class MyStrat extends Strategy {
   }
   override async loop(): Promise<void> {
     logInfo("loop (nothing), waiting 10 sec");
-    const ohlcvData = await this.krakenApi.getOHLCV("PF_XBTUSD", TimeFrameEnum.OneMinute);
+    const ohlcvData = await this.binanceApi.getOHLCV({
+			marketId: "BTCUSDC",
+			timeFrame: TimeFrameEnum.OneMinute,
+		});
 
     if (ohlcvData && ohlcvData.length > 0) {
       logInfo(ohlcvData[0]);
@@ -32,9 +35,8 @@ class MyStrat extends Strategy {
   }
 }
 
-const app = antworker();
-Logger.getInstance().setLogLevel(LogLevelEnum.Debug);
+const app = antworker("sample-strategy-runner");
+Logger.getInstance().setLogLevel(LogLevelEnum.Trace);
 
 app.setStrategy(new MyStrat());
-
 app.runStrategy();
