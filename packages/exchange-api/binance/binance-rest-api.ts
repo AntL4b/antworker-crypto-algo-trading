@@ -3,7 +3,7 @@ import { OHLCVData } from "../../models/objects/ohlcv-data";
 import { ExchangeRestApi } from "../exchange-rest-api";
 import { TimeFrameEnum } from "../../models/enums/time-frame-enum";
 import { AntworkerError } from "../../errors/antworker-error";
-import { ObjectUtils } from "../../_helpers/object-utils";
+import { ObjectUtils } from "../../utils/object-utils";
 import { Utils } from "../../utils/utils";
 import { logError, logTrace } from "../../logger/logger";
 import { BinanceApiCredentials } from "../../models/objects/exchange-api/binance-api-credentials";
