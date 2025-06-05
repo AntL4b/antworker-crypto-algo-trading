@@ -3,7 +3,8 @@ import { logInfo } from "../logger/logger";
 import { Strategy } from "../strategy/strategy";
 
 export class Antworker {
-  private static instance: Antworker;
+  private static instance: Antworker = null;
+
   private strategy: Strategy;
 	public workerAppName: string;
 

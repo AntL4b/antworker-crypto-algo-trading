@@ -1,4 +1,4 @@
-import { antworker, BinanceRestApi, Logger, logInfo, LogLevelEnum, Strategy, TimeFrameEnum, Utils } from "@antl4b/antworker-crypto-algo-trading";
+import { antworker, BinanceRestApi, consoleLoggerHandler, fileLoggerHandler, Logger, logInfo, LogLevelEnum, Strategy, TimeFrameEnum, Utils } from "@antl4b/antworker-crypto-algo-trading";
 import { binanceApiCredentials } from "./private/binance-api-credentials"; // This file has to be created from your own
 
 class MyStrat extends Strategy {
@@ -36,7 +36,15 @@ class MyStrat extends Strategy {
 }
 
 const app = antworker("sample-strategy-runner");
-Logger.getInstance().setLogLevel(LogLevelEnum.Trace);
+
+// Configure logger
+const logger = Logger.getInstance();
+logger.setLogLevel(LogLevelEnum.Trace);
+logger.addHandler(consoleLoggerHandler());
+logger.addHandler(fileLoggerHandler({
+	filePrefix: "sample-strategy-runner",
+	logDir: "logs",
+}));
 
 app.setStrategy(new MyStrat());
 app.runStrategy();

@@ -4,27 +4,21 @@ import { LoggerFormatter } from "../models/objects/logger/logger-formatter";
 import { LoggerHandler } from "../models/objects/logger/logger-handler";
 
 export class Logger {
-  private static instance: Logger;
+  private static instance: Logger = null;
 
   private logLevel: LogLevelEnum;
   private formatter: LoggerFormatter;
   private handlers: Array<LoggerHandler>;
 
   private constructor() {
+		// Set a default formatter
     this.formatter = (payload: any) => {
       return JSON.stringify(payload, null, 2);
     };
 
     // Set default logs level
     this.logLevel = LogLevelEnum.Info;
-
-    this.handlers = [
-      (messages: Array<string>, logLevel: LogLevelEnum, context: LoggerContext) => {
-        for (let message of messages) {
-          console[logLevel](`${new Date().toISOString()} :: ${logLevel} :: ${message}`);
-        }
-      },
-    ];
+    this.handlers = [];
   }
 
   /**
@@ -121,8 +115,8 @@ export class Logger {
 
   private performLog(payload: Array<any>, logLevel: LogLevelEnum, context: LoggerContext): void {
     payload = payload.map((p) => this.formatter(p));
-    for (let index = 0; index < this.handlers.length; index++) {
-      const handler = this.handlers[index];
+
+    for (const handler of this.handlers) {
       handler(payload, logLevel, context);
     }
   }

@@ -39,7 +39,7 @@ interface BinanceRestApiRequest {
 
 export class BinanceRestApi implements ExchangeRestApi {
   private binanceApiCredentials: BinanceApiCredentials;
-  private static instance: BinanceRestApi;
+  private static instance: BinanceRestApi = null;
 
   private constructor() {}
 

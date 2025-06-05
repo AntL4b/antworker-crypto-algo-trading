@@ -2,12 +2,13 @@
  * PACKAGES
  */
 export { Antworker, antworker } from "./antworker/antworker";
+export { AntworkerError } from "./errors/antworker-error";
 export { ExchangeRestApi } from "./exchange-api/exchange-rest-api";
 export { BinanceRestApi } from "./exchange-api/binance/binance-rest-api"
 export { Strategy } from "./strategy/strategy";
 export { Utils } from "./utils/utils";
-export { AntworkerError } from "./errors/antworker-error";
 export { Logger, logTrace, logDebug, logInfo, logWarn, logError } from "./logger/logger";
+export { consoleLoggerHandler, fileLoggerHandler } from "./logger/logger-handlers"
 
 /**
  * MODELS
